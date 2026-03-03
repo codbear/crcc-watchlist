@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Streamers Twitch</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <img src="/images/logo.png" alt="Logo CRCC 2026" class="logo" />
+        <h1>Une Croix Rouge comme le Coeur</h1>
+      </header>
+
+      <section class="panel">
+        <h2>Streamers en live</h2>
+        <div id="live-list" class="cards"></div>
+        <p id="live-empty" class="empty">Aucun streamer en live pour le moment.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Streamers hors live</h2>
+        <ul id="offline-list" class="offline-list"></ul>
+        <p id="offline-empty" class="empty">Aucun streamer hors live.</p>
+      </section>
+
+      <p id="status" class="status">Chargement...</p>
+      <button id="refresh-btn" type="button">Actualiser</button>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
