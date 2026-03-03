@@ -30,9 +30,12 @@ function formatViewerCount(viewerCount) {
 }
 
 function renderLiveCard(channel) {
-  const article = document.createElement("article");
-  article.className = "card";
-  article.dataset.login = channel.login.toLowerCase();
+  const cardLink = document.createElement("a");
+  cardLink.className = "card";
+  cardLink.dataset.login = channel.login.toLowerCase();
+  cardLink.href = `https://www.twitch.tv/${channel.login}`;
+  cardLink.target = "_blank";
+  cardLink.rel = "noreferrer noopener";
 
   const thumbnail = document.createElement("img");
   thumbnail.src = channel.thumbnailUrl;
@@ -50,21 +53,15 @@ function renderLiveCard(channel) {
 
   const game = document.createElement("p");
   game.className = "meta";
-  game.textContent = `Jeu: ${channel.gameName || "Non précisé"}`;
+  game.innerHTML = `<b>Catégorie:</b> ${channel.gameName || "Non précisé"}`;
 
   const viewers = document.createElement("p");
   viewers.className = "meta";
-  viewers.textContent = `Spectateurs: ${formatViewerCount(channel.viewerCount)}`;
+  viewers.innerHTML = `<b>Spectateurs:</b> ${formatViewerCount(channel.viewerCount)}`;
 
-  const link = document.createElement("a");
-  link.href = `https://www.twitch.tv/${channel.login}`;
-  link.target = "_blank";
-  link.rel = "noreferrer noopener";
-  link.textContent = "Ouvrir le live";
-
-  content.append(title, streamTitle, game, viewers, link);
-  article.append(thumbnail, content);
-  return article;
+  content.append(title, streamTitle, game, viewers);
+  cardLink.append(thumbnail, content);
+  return cardLink;
 }
 
 function renderOfflineItem(channel) {
@@ -86,7 +83,7 @@ function renderOfflineItem(channel) {
   link.href = `https://www.twitch.tv/${channel.login}`;
   link.target = "_blank";
   link.rel = "noreferrer noopener";
-  link.textContent = channel.login;
+  link.innerHTML = channel.displayName;
 
   item.append(avatar, link);
   return item;

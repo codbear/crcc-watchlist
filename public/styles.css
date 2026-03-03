@@ -1,6 +1,14 @@
+
 :root {
-  color-scheme: light;
-  font-family: Arial, Helvetica, sans-serif;
+    color-scheme: light;
+    font-family: Arial, Helvetica, sans-serif;
+    --color-paper: #FDFEFE;
+    --color-clouds: #ECF0F1;
+    --color-silver: #BDC3C7;
+    --color-alizarin: #E74C3C;
+    --color-wisteria: #8E44AD;
+    --color-amethyst: #9B59B6;
+    --color-midnight-blue: #2C3E50;
 }
 
 * {
@@ -9,12 +17,12 @@
 
 body {
   margin: 0;
-  background: #f0f0f0;
-  color: #11141b;
+  background: var(--color-clouds);
+  color: var(--color-midnight-blue);
 }
 
 a {
-  color: #9147ff;
+  color: var(--color-wisteria);
   text-decoration: none;
 }
 
@@ -32,7 +40,7 @@ a {
 
 .header h1 {
   margin: 0;
-  color: red;
+  color: var(--color-alizarin);
   text-transform: uppercase;
 }
 
@@ -46,13 +54,14 @@ a {
 .panel {
   margin-top: 24px;
   padding: 16px;
-  background: #ffffff;
-  border: 1px solid #2b3146;
+  background: var(--color-paper);
+  border: 1px solid var(--color-silver);
   border-radius: 10px;
 }
 
 .panel h2 {
-  color: red;
+  color: var(--color-alizarin);
+  margin-top: 0;
 }
 
 .cards {
@@ -62,10 +71,12 @@ a {
 }
 
 .card {
-  background: #f0f0f0;
-  border: 1px solid #2b3146;
+  display: block;
+  background: var(--color-clouds);
+  border: 1px solid var(--color-silver);
   border-radius: 8px;
   overflow: hidden;
+  text-decoration: none;
 }
 
 .card img {
@@ -81,12 +92,16 @@ a {
 .card-content h3 {
   margin: 0 0 8px;
   font-size: 1rem;
+  color: var(--color-wisteria);
 }
 
 .meta {
   margin: 4px 0;
-  color: #11141b;
+  color: var(--color-midnight-blue);
   font-size: 0.9rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .offline-list {
@@ -103,11 +118,11 @@ a {
   margin: 8px 0;
   padding: 2px 8px;
   border-radius: 5px;
-  background: #9147ff;
+  background: var(--color-clouds);
 }
 
 .offline-list li a {
-  color: white;
+  color: var(--color-wisteria);
   font-weight: bold;
 }
 
@@ -121,18 +136,18 @@ a {
 
 .status {
   margin-top: 16px;
-  color: #b8c0d8;
+  color: var(--color-midnight-blue);
 }
 
 .empty {
   margin-top: 12px;
-  color: #11141b;
+  color: var(--color-midnight-blue);
 }
 
 #refresh-btn {
   margin-top: 8px;
-  background: #9147ff;
-  color: white;
+  background: var(--color-wisteria);
+  color: var(--color-paper);
   border: none;
   border-radius: 8px;
   padding: 10px 14px;
@@ -140,5 +155,5 @@ a {
 }
 
 #refresh-btn:hover {
-  background: #7d3ee0;
+  background: var(--color-amethyst);
 }
